@@ -13,11 +13,11 @@ const getHackathonsData = async (req, res) => {
     return res.status(200).send(response);
 };
 
-const createHackathonsData = async (req, res) => {
+const createHackathon = async (req, res) => {
     const params = req.params;
     const queryParams = req.query;
     const bodyParams = req.body;
-    const response = await hackathonsServices.createHckathonsData({
+    const response = await hackathonsServices.createHackathon({
         ...params,
         ...queryParams,
         ...bodyParams,
@@ -51,7 +51,7 @@ const deleteHackathonsData = async (req, res) => {
 
 module.exports = {
     getHackathonsData,
-    createHackathonsData,
+    createHackathon,
     updateHackathonsData,
     deleteHackathonsData,
     // getHackathons,

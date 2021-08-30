@@ -23,6 +23,7 @@
     "firebase-admin": "^9.11.1",
     "google-auth-library": "^7.6.2",
     "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^3.1.2",
     "netlify-lambda": "^2.0.14",
     "serverless-http": "^2.7.0",
     "uuid": "^8.3.2"

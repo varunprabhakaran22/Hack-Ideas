@@ -16,6 +16,7 @@ const getloginDetails = async params => {
                     const token = jwt.sign(
                         {
                             email: userDetails[0].email,
+                            name: userDetails[0].name,
                         },
                         jwtkey,
                         {

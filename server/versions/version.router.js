@@ -11,7 +11,7 @@ router.get("/", function (req, res) {
 });
 
 //All Route Paths
-router.use("/product", hackathonsRouter);
+router.use("/hackathon", hackathonsRouter);
 router.use("/user", userRouter);
 
 module.exports = router;

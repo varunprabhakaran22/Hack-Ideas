@@ -24,10 +24,10 @@ const getHackathonsData = async () => {
     }
 };
 
-const createHackathonsData = async params => {
+const createHackathon = async params => {
     console.log("calledd hackathons service");
     try {
-        const response = await hackathonsRepo.createHackathonsData(params);
+        const response = await hackathonsRepo.createHackathon(params);
         console.log("response", response);
         if (response) {
             return { status: 1, message: POST_SUCCESS, data: response };
@@ -75,7 +75,7 @@ const deleteHackathonsData = async params => {
 
 module.exports = {
     getHackathonsData,
-    createHackathonsData,
+    createHackathon,
     updateHackathonsData,
     deleteHackathonsData,
     // getHackathons,

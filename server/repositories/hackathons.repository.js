@@ -20,7 +20,8 @@ const getHackathons = async hackathonsIds => {
     }
 };
 
-const createHackathonsData = async params => {
+const createHackathon = async params => {
+    console.log("params ", params);
     try {
         return await hackathonsModel.add(params);
     } catch (e) {
@@ -73,7 +74,7 @@ const deleteHackathonsData = async params => {
 
 module.exports = {
     getHackathonsData,
-    createHackathonsData,
+    createHackathon,
     updateHackathonsData,
     deleteHackathonsData,
     getHackathons,

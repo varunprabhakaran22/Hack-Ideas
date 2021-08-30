@@ -4,7 +4,7 @@ const hackathonsController = require("../controllers/hackathons.controller");
 // const { checkToken } = require("../../../utils/jwt");
 
 router.get("/", hackathonsController.getHackathonsData);
-router.post("/create", hackathonsController.createHackathonsData);
+router.post("/create", hackathonsController.createHackathon);
 router.put("/update", hackathonsController.updateHackathonsData);
 router.delete("/delete", hackathonsController.deleteHackathonsData);
 
