@@ -110,30 +110,6 @@ class LoginBlock extends Component {
                           background-color: #f05136;
                           border-color: #f05136;
                         }
-
-                        .ant-notification {
-                            left: 0 !important;
-                            right: 0 !important;
-                            margin: 0 !important;
-                            max-width: unset !important;
-                            width: 100%;
-                            z-index: 999;
-                            color: white;
-                        }
-                        .ant-notification-notice {
-                            border-radius: 0;
-                            box-shadow: 0 3px 6px 0 rgba(0,0,0,0.1);
-                            padding: 1rem 10rem;
-                        }
-    
-                        .ant-notification-notice-message {
-                            color: var(--dove);
-                            margin-bottom: 0;
-                        }
-    
-                        .ant-notification-notice-close {
-                            right: 156px;
-                        }
                     `}
                 </style>
             </>

@@ -15,7 +15,7 @@ const getHackathonsData = async () => {
     try {
         const response = await hackathonsRepo.getHackathonsData();
         if (response) {
-            return { status: 1, message: GET_SUCCESS, response };
+            return { status: 1, message: GET_SUCCESS, data:response };
         } else {
             return { status: 0, message: GET_FAILED };
         }

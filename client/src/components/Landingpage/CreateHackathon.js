@@ -51,11 +51,13 @@ export default function CreateHackathon() {
         await axios.post(G_API_URL + "hackathon/create", data, config)
         .then(res =>{
             if(res.status === 1){
+                setVisible(false)
                 openSuccessNotification("created successfully");
             }
-        }).catch(err =>
+        }).catch(err =>{
+            setVisible(false)
             openFailureNotification("Error! try after some times")
-        )
+        })
     };
 
     const openSuccessNotification = msg => {
