@@ -21,7 +21,7 @@ Step4:Sorting based on time and votes can also be done <br/>
 
 ## To run this project locally
 Clone the project using Git Bash / Command prompt: <br/>
-git clone : https://github.com/varunprabhakaran22/URL-shortening-service/ <br/>
+git@github.com:varunprabhakaran22/Hack-Ideas.git <br/>
 
 ### Navigate inside the directory
 cd client
