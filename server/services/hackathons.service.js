@@ -40,7 +40,7 @@ const createHackathon = async params => {
 };
 
 const updateHackathonsData = async params => {
-    console.log("calledd hackathons service");
+    console.log("calledd hackathons updateHackathonsData");
     try {
         const response = await hackathonsRepo.updateHackathonsData(params);
         console.log("response", response);

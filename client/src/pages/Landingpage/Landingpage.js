@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { Input, Modal, Button, Select, notification } from "antd";
-import jwtDecode from "jwt-decode";
 import axios from "axios";
-import { __getCookie } from "../../utils/cookie.util";
-import { useHistory} from "react-router-dom";
-import { FP_COOKIE_PREFIX, G_API_URL } from "../../constants/constants";
+import { G_API_URL } from "../../constants/constants";
 import {check_login} from '../../utils/login.util'
 import Layout from "../../components/Layout";
 import CreateHackathon from "../../components/Landingpage/CreateHackathon";
 import Hackathons from "../../components/Landingpage/DisplayHackathon";
-import HackathonContext from "../../context/HackathonContext"
+import {HackathonContext} from "../../context/HackathonContext"
+import Sorting from '../../components/Landingpage/Sorting'
+import Spinner from "../../components/Spinner/Spinner"
 
 export default function Landingpage() {
     const [hackathons, setHackathons] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
+    const [isLogin, setIsLogin] = useState(false);
 
 
     useEffect(() => {
@@ -21,49 +20,42 @@ export default function Landingpage() {
     },[])
 
     const fetchHackathons = async() => {
+        // setIsLoading(true)
+        let isLogin = check_login()
         let hackathons 
         await axios.get(G_API_URL + "hackathon/")
         .then((res) =>{
             if(res.data.status ===1){
-                console.log(res)
                 hackathons = res.data.data
+                setIsLoading(false)
                 setHackathons(hackathons)
-                sort("likess", hackathons, "ascending")
+                setIsLogin(isLogin)
             }
         }).catch((error) => {
+            setIsLoading(false)
+            setIsLogin(isLogin)
             console.log(error)
         })
     }
 
-    const sort = (basedOn,hackathons,type)=>{
-        let hackathons_data = hackathons
-        console.log(hackathons_data)
-        if(basedOn === "likes"){
-            console.log("filter")
-            if(type==="ascending")
-                hackathons_data.sort((a,b)=> a.likes.length - b.likes.length)
-            else
-                hackathons_data.sort((a,b)=> b.likes.length - a.likes.length)
-        }else{
-            console.log("filter time")
-            if(type==="ascending")
-                hackathons_data.sort((a,b)=> a.createdAt - b.createdAt)
-            else
-                hackathons_data.sort((a,b)=> b.createdAt - a.createdAt)
-        }
-        console.log(hackathons_data)
-
-        setHackathons(hackathons_data)
-    }
-
-
-    console.log("state",hackathons)
+    console.log("isloading", isLoading)
+    
     return (
         <>
             <Layout>
-                <CreateHackathon />
-                <Hackathons hackathons={hackathons} />
+                {!isLoading ?
+                    <HackathonContext.Provider value={{hackathons, setHackathons, isLogin, fetchHackathons}} >
+                        <CreateHackathon />
+                        <Sorting />
+                        <Hackathons />
+                    </HackathonContext.Provider>
+                : <Spinner />}
             </Layout>
+            <style jsx>{`
+                .action-block {
+                    margin: 0 0 var(--peaky-gap-32);
+                }
+            `}</style>
         </>
     );
 }

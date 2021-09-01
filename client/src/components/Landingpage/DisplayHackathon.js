@@ -1,32 +1,29 @@
-import React, { useState } from "react";
-import { Input, Modal, Button, Select, notification } from "antd";
-import jwtDecode from "jwt-decode";
-import axios from "axios";
-import { __getCookie } from "../../utils/cookie.util";
-import { useHistory} from "react-router-dom";
-import { FP_COOKIE_PREFIX, G_API_URL } from "../../constants/constants";
-import {check_login} from '../../utils/login.util'
+import React, { useContext } from "react";
 import Card from './HackCard'
+import {HackathonContext} from "../../context/HackathonContext"
 
-export default function DisplayHackathon({hackathons}) {
+export default function DisplayHackathon() {
 
-    console.log("props",hackathons)
+    const {hackathons} = useContext(HackathonContext)
 
+    //Pass individual hackathons as props to hackcard component
     const renderHackathon = ()=>{
         return (hackathons.map(hackathon=>{
-            return (<Card hackathon={hackathon}/>)
+            return (<Card key = {hackathon.id} hackathon={hackathon}/>)
         }))
     }
+
     return (
         <>
             <div className="display-hackathon-container lr-pad-d lr-pad-m tb-pad-d-2">
+                <h1 className="h1-heading"> Trending Hackathons </h1>
                 <div className="g-d g-col-3 g-gap-16 g-h-c">{renderHackathon()}</div>
             </div>
             
             <style jsx>
                 {`
                     .display-hackathon-container{
-
+                        // background-color: var(--snowfall);
                     }
                 `}
             </style>

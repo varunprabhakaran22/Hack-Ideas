@@ -30,11 +30,10 @@ const createHackathon = async params => {
 };
 
 const updateHackathonsData = async params => {
-    console.log("updatehackathonsData params", params);
     let hackathons;
     try {
         await hackathonsModel
-            .where("hackathons_id", "==", params.hackathons_id)
+            .where("createdAt", "==", params.createdAt)
             .get()
             .then(querySnapshot => {
                 querySnapshot.forEach(doc => {
