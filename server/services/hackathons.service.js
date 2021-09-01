@@ -11,7 +11,6 @@ const {
 } = require("../constants/constant");
 
 const getHackathonsData = async () => {
-    console.log("calledd hackathons service");
     try {
         const response = await hackathonsRepo.getHackathonsData();
         if (response) {
@@ -25,10 +24,8 @@ const getHackathonsData = async () => {
 };
 
 const createHackathon = async params => {
-    console.log("calledd hackathons service");
     try {
         const response = await hackathonsRepo.createHackathon(params);
-        console.log("response", response);
         if (response) {
             return { status: 1, message: POST_SUCCESS, data: response };
         } else {
@@ -40,10 +37,8 @@ const createHackathon = async params => {
 };
 
 const updateHackathonsData = async params => {
-    console.log("calledd hackathons updateHackathonsData");
     try {
         const response = await hackathonsRepo.updateHackathonsData(params);
-        console.log("response", response);
         if (response) {
             return { status: 1, message: UPDATE_SUCCESS, data: response };
         } else {
@@ -54,15 +49,9 @@ const updateHackathonsData = async params => {
     }
 };
 
-/* 
-    @deleteIndex Methods  - Delete the data from algolia index
-
-*/
 const deleteHackathonsData = async params => {
-    console.log("calledd hackathons service");
     try {
         const response = await hackathonsRepo.deleteHackathonsData(params);
-        console.log("deleteres", response);
         if (response) {
             return { status: 1, message: DELETE_SUCCESS, data: response };
         } else {
@@ -78,5 +67,4 @@ module.exports = {
     createHackathon,
     updateHackathonsData,
     deleteHackathonsData,
-    // getHackathons,
 };

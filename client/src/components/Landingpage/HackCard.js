@@ -1,5 +1,5 @@
 
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { Card } from "antd"; 
 import {LikeOutlined} from '@ant-design/icons'
 import jwtDecode from "jwt-decode";
@@ -8,7 +8,6 @@ import {HackathonContext} from "../../context/HackathonContext"
 import { __getCookie } from "../../utils/cookie.util";
 import { useHistory} from "react-router-dom";
 import { FP_COOKIE_PREFIX, G_API_URL } from "../../constants/constants";
-import { openSuccessNotification, openFailureNotification } from "../../utils/notification";
 
 // liked = #2d60ff
 
@@ -62,7 +61,7 @@ export default function HackCard({hackathon}) {
             <div className="hackathon-card-container">
             <Card
                 className="hackathon-card"
-                style={{ width: 300 }}
+                style={{ width: 350 }}
             >
                 <div className="meta">Title: {hackathon.title}</div>
                 <div className="desc">Description: {hackathon.description}</div>
@@ -75,7 +74,7 @@ export default function HackCard({hackathon}) {
                 </div>
             </Card>
             </div>
-            <style jsx>
+            <style jsx={'true'}>
                 {`  
                     .meta{
                         font-size:30px;

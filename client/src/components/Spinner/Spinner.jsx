@@ -7,7 +7,7 @@ export default function spinner() {
             <div className = 'spinner f-d f-h-c f-v-c'>
                 <Spin />
             </div>
-            <style jsx={true}>
+            <style jsx={'true'}>
                 {`
                     .spinner{
                         height:60vh;

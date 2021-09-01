@@ -37,7 +37,6 @@ const getloginDetails = async params => {
 };
 
 const saveSignUpDetails = async params => {
-    console.log("signUp", params);
     try {
         const hashedPassword = await bcrypt.hash(params.data.password, 10);
         if (hashedPassword) {
@@ -47,7 +46,6 @@ const saveSignUpDetails = async params => {
                 name: params.data.name,
                 uid: uuidv4(),
             };
-            console.log("userDetails", userDetails);
             return await userModel.add(userDetails);
         }
     } catch (e) {

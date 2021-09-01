@@ -11,7 +11,7 @@ const checkToken = (req, res, next) => {
         }
         /*verify token*/
         // verify makes sure that the token hasn't expired and has been issued by us
-        jwt.verify(token, jwtSecret, (err, decoded) => {
+        jwt.verify(token, jwtSecret.secret, (err, decoded) => {
             if (err) {
                 return res.status(403).json({
                     success: false,

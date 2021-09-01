@@ -94,7 +94,7 @@ class LoginBlock extends Component {
                         </Button>
                     </Form>
                 </div>
-                <style jsx>
+                <style jsx={'true'}>
                     {`
                         .btn-outline-primary {
                             display: inline-block

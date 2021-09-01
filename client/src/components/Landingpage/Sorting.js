@@ -59,7 +59,7 @@ export default function Sorting() {
             <div className="sort-hackathon-container lr-pad-d lr-pad-m"> 
                 {renderSorting()}
             </div>
-            <style jsx>{`
+            <style jsx={'true'}>{`
                 .sort-hackathon-container {
                     float:right;
                 }

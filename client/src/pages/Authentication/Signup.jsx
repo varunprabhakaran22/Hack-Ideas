@@ -119,7 +119,7 @@ class SignupBlock extends Component {
                         </Button>
                     </Form>
                 </div>
-                <style jsx>
+                <style jsx={'true'}>
                     {`
                         .signup-block{
                             width:45vw;

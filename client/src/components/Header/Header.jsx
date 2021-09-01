@@ -47,7 +47,7 @@ const Header = props => {
                 </div>
             </div>
 
-            <style jsx={true}>
+            <style jsx={'true'}>
                 {`
                     .navbar-container {
                         height: 54px;

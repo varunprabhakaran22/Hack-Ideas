@@ -111,7 +111,7 @@ export default function CreateHackathon() {
                 </Modal>
             </div>
 
-            <style jsx>{`
+            <style jsx={'true'}>{`
                 .create-hackathon-container {
                 }
 

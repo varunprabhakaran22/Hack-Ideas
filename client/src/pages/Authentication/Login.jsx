@@ -28,7 +28,7 @@ class Login extends Component {
                         </div>
                     </div>
                 </div>
-                <style jsx>
+                <style jsx={'true'}>
                     {`
                         .login-container {
                             height: calc(100vh - 54px);

@@ -26,7 +26,6 @@ const createHackathon = async (req, res) => {
 };
 
 const updateHackathonsData = async (req, res) => {
-    console.log('updateHackathonsData updateHackathonsData')
     const params = req.params;
     const queryParams = req.query;
     const bodyParams = req.body;

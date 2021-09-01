@@ -21,7 +21,6 @@ const getHackathons = async hackathonsIds => {
 };
 
 const createHackathon = async params => {
-    console.log("params ", params);
     try {
         return await hackathonsModel.add(params);
     } catch (e) {

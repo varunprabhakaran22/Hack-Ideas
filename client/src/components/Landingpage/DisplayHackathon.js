@@ -17,10 +17,10 @@ export default function DisplayHackathon() {
         <>
             <div className="display-hackathon-container lr-pad-d lr-pad-m tb-pad-d-2">
                 <h1 className="h1-heading"> Trending Hackathons </h1>
-                <div className="g-d g-col-3 g-gap-16 g-h-c">{renderHackathon()}</div>
+                <div className="g-d g-col-3 g-gap-32 g-h-c">{renderHackathon()}</div>
             </div>
             
-            <style jsx>
+            <style jsx={'true'}>
                 {`
                     .display-hackathon-container{
                         // background-color: var(--snowfall);

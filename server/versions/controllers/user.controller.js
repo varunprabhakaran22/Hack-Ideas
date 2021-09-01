@@ -1,7 +1,6 @@
 const userServices = require("../../services/user.service");
 
 const saveSignUpDetails = async (req, res) => {
-    console.log("save user controller");
     const params = req.params;
     const queryParams = req.query;
     const bodyParams = req.body;
@@ -10,8 +9,6 @@ const saveSignUpDetails = async (req, res) => {
         ...queryParams,
         ...bodyParams,
     });
-
-    console.log("response controller", response);
     return res.status(200).send(response);
 };
 

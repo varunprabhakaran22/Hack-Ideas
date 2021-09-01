@@ -15,7 +15,7 @@ export default function Landingpage() {
     const [isLogin, setIsLogin] = useState(false);
 
 
-    useEffect(() => {
+    useEffect(() => { 
         fetchHackathons()
     },[])
 
@@ -37,8 +37,6 @@ export default function Landingpage() {
             console.log(error)
         })
     }
-
-    console.log("isloading", isLoading)
     
     return (
         <>
@@ -51,7 +49,7 @@ export default function Landingpage() {
                     </HackathonContext.Provider>
                 : <Spinner />}
             </Layout>
-            <style jsx>{`
+            <style jsx={'true'}>{`
                 .action-block {
                     margin: 0 0 var(--peaky-gap-32);
                 }
