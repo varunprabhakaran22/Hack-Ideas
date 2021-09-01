@@ -1,0 +1,9 @@
+export const G_API_URL = process.env.REACT_APP_G_API_URL;
+export const G_HOME_URL = process.env.REACT_APP_G_HOME_URL;
+export const G_URL = process.env.REACT_APP_G_URL;
+export const LIKE_H_TO_L = "Like: High to Low";
+export const LIKE_L_TO_H = "Like: Low to High";
+export const TIME_H_TO_L = "Time: New to Old";
+export const TIME_L_TO_H = "Time: Old to New";
+export const FP_COOKIE_DOMAIN = "hackIdeas";
+export const FP_COOKIE_PREFIX = "_hack_";
